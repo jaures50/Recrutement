@@ -2,14 +2,16 @@
 
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
 
-
-
-
+    <div>
+        <marquee style="height:50px; padding:17px; background-color:#00B074; color:white; font-weight:bold; " behavior="right" direction="left">
+            Rejoignez notre plateforme de recrutement et accédez à des opportunités sur mesure, conçues pour répondre à vos ambitions professionnelles. Trouvez l'emploi qui correspond à vos talents ou le candidat idéal pour votre entreprise en toute simplicité. </marquee>
+    </div>
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
         <div class="owl-carousel header-carousel position-relative">
+
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-1.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(43, 57, 64, .5);">
@@ -25,6 +27,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-2.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(43, 57, 64, .5);">
@@ -40,10 +43,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- Carousel End -->
-
 
     <!-- Search Start -->
     <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
@@ -79,7 +82,6 @@
         </div>
     </div>
     <!-- Search End -->
-
 
     <!-- Category Start -->
     <div class="container-xxl py-5">
@@ -206,13 +208,6 @@
     </div>
     <!-- Category End -->
 
-
-
-
-
 </div>
 
-
-
-<!-- Carousel End -->
 @endsection

@@ -49,69 +49,71 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 container ">
-        <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-            <h1 class="m-0 text-primary">JobEntry</h1>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Accueil</a>
-                <a href="/propos" class="nav-item nav-link {{ request()->is('propos') ? 'active' : '' }}">A propos</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">ENtreprises</a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                        <a href="/entreprise" class="dropdown-item {{ request()->is('entreprise') ? 'active' : '' }} ">Liste des entreprises </a>
-                        <a href="job-detail.html" class="dropdown-item {{ request()->is('propos') ? 'active' : '' }} "> Annonce Emploi</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                        <a href="/job" class="dropdown-item {{ request()->is('job') ? 'active' : '' }} ">Job Category</a>
-                        <a href="/client" class="dropdown-item {{ request()->is('client') ? 'active' : '' }} ">Quelques avis</a>
-                    </div>
-                </div>
-                <a href="/contact" class="nav-item nav-link {{ request()->is('propos') ? 'active' : '' }} ">Contact</a>
-            </div>
-            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Annonce Emploi<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-
-
-        @if (Auth::check())
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ Auth::user()->name }}
+    <div class=" navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 container-fluid">
+        <nav class=" container ">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                <h1 class="m-0 text-primary">JobEntry</h1>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Accueil</a>
+                    <a href="/propos" class="nav-item nav-link {{ request()->is('propos') ? 'active' : '' }}">A propos</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Entreprises</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/entreprise" class="dropdown-item {{ request()->is('entreprise') ? 'active' : '' }} ">Liste des entreprises </a>
+                            <a href="job-detail.html" class="dropdown-item {{ request()->is('propos') ? 'active' : '' }} "> Annonce Emploi</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/job" class="dropdown-item {{ request()->is('job') ? 'active' : '' }} ">Job Category</a>
+                            <a href="/client" class="dropdown-item {{ request()->is('client') ? 'active' : '' }} ">Quelques avis</a>
+                        </div>
+                    </div>
+                    <a href="/contact" class="nav-item nav-link {{ request()->is('propos') ? 'active' : '' }} ">Contact</a>
+                </div>
+            </div>
+
+
+            @if (Auth::check())
+            <div class="nav-item dropdown">
+                <a style="font-weight: bold;" class="nav-link dropdown-toggle text-dark " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ Auth::user()->name }}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
-                </li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </ul>
-        </li>
-        @else
 
-        <li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </ul>
+            </div>
+            @else
+
+
             <a href="{{ route('register') }}" class=" " target="_blank">
                 <span class="tf-icons ti ti-login scaleX-n1-rtl me-md-1"></span>
                 <span class="mx-3">Connexion</span>
             </a>
-        </li>
-        @endif
 
-    </nav>
+            @endif
+
+        </nav>
+
+    </div>
     <!-- Navbar End -->
 
 
 
     <!-- Contenu -->
-    <main class="py-1">
+    <main class="">
         @yield('content')
     </main>
 
